@@ -7,7 +7,7 @@ var movieHistory = document.querySelector("#movieHistoryCard");
 
 // Added myMOvies object **2
 var myMovies = {
-    
+
 };
 
 if(localStorage.getItem("myMovies")) {
@@ -37,7 +37,7 @@ function updateMovieHistory(movie) {
         </tr>
         ${
             Object.keys(myMovies).map(function (key) {
-                return `<tr><td>${key}</td><td style='text-align: right;'>${myMovies[key]}</td></tr>`           
+                return `<tr><td>${key}</td><td style='text-align: right;'>${myMovies[key]}</td></tr>`
                 }).join("")
         }
     </table>
@@ -46,7 +46,7 @@ function updateMovieHistory(movie) {
 }
 
 function keyExists(value, obj) {
-    obj = Object.keys(obj); 
+    obj = Object.keys(obj);
     for (var i = 0; i < obj.length; i++) {
       if (value.toLowerCase() === obj[i].toLowerCase()) { return obj[i]; }
     }
@@ -84,10 +84,11 @@ function addMovie() {
         myMovies[userTypedText] = myMovies[userTypedText] + 1 || 1;
         localStorage.setItem("myMovies", JSON.stringify(myMovies));
     }
-    
+
     // Step 6: Call the clearInput function to clear the input field
     clearInput();
 
     // **3 Add to myMovies Object: watched zero times
     updateMovieHistory(userTypedText);
+    
 }
