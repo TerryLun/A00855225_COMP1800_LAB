@@ -1,3 +1,7 @@
+/*
+version: v1.0
+*/
+
 // Add DOM selectors to target input and UL movie list
 var inp = document.querySelector("input");
 var myMovieList = document.querySelector("ul");
@@ -90,5 +94,5 @@ function addMovie() {
 
     // **3 Add to myMovies Object: watched zero times
     updateMovieHistory(userTypedText);
-    
+
 }
